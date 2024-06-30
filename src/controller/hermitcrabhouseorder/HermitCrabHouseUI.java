@@ -1,4 +1,4 @@
-package controller;
+package controller.hermitcrabhouseorder;
 
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -22,7 +22,7 @@ public class HermitCrabHouseUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -31,7 +31,17 @@ public class HermitCrabHouseUI extends JFrame {
 			public void run() {
 				try {
 					HermitCrabHouseUI frame = new HermitCrabHouseUI();
+			        // Get the screen size
+			        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+			        // Calculate the new location of the window
+			        int x = (screenSize.width - frame.getWidth()) / 2;
+			        int y = 0; // Align to the top
+
+			        // Set the new location of the window
+			        frame.setLocation(x, y);
 					frame.setVisible(true);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -135,5 +145,7 @@ public class HermitCrabHouseUI extends JFrame {
 		lblNewLabel.setFont(new Font("標楷體", Font.PLAIN, 48));
 		lblNewLabel.setBounds(40, 39, 546, 65);
 		contentPane.add(lblNewLabel);
+		
+
 	}
 }

@@ -1,4 +1,4 @@
-package controller;
+package controller.hermitcrabhouseorder;
 
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -15,6 +15,7 @@ import javax.swing.border.EmptyBorder;
 
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ButtonGroup;
@@ -35,6 +36,15 @@ public class HermitCrabHouseL3UI extends JFrame {
 			public void run() {
 				try {
 					HermitCrabHouseL3UI frame = new HermitCrabHouseL3UI();
+			        // Get the screen size
+			        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+			        // Calculate the new location of the window
+			        int x = (screenSize.width - frame.getWidth()) / 2;
+			        int y = 0; // Align to the top
+
+			        // Set the new location of the window
+			        frame.setLocation(x, y);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
