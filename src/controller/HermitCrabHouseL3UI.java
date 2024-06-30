@@ -86,6 +86,7 @@ public class HermitCrabHouseL3UI extends JFrame {
 		buttonGroup.add(dd_1);
 		dd_1.setForeground(new Color(95, 158, 160));
 		dd_1.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+        dd_1.setSelected(true); // Set dd_1 as selected by default
 		dd_1.setBackground(Color.WHITE);
 		contentPane.add(dd_1);
 		
