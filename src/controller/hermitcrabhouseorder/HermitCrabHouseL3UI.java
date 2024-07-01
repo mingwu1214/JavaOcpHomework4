@@ -61,7 +61,7 @@ public class HermitCrabHouseL3UI extends JFrame {
 		setTitle("自然舒居級: 提供自然的舒適殼型，讓寄居蟹享受自然的庇護。");
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(650, 300, 820, 793);
+		setBounds(0, 0, 820, 793);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

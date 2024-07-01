@@ -50,7 +50,7 @@ public class LoginErrorUI extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(LoginErrorUI.class.getResource("/images/0-1420_red-cross-mark-clipart-green-checkmark-red-x.png")));
 		setTitle("登入失敗，請重新再登入一次");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 0, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 

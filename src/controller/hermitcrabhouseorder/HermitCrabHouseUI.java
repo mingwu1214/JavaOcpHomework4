@@ -56,7 +56,7 @@ public class HermitCrabHouseUI extends JFrame {
 		setTitle("寄居蟹度假豪華住宿選擇\n");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(HermitCrabHouseUI.class.getResource("/images/hermit-crab_64.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(650, 300, 820, 793);
+		setBounds(0, 0, 820, 793);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
