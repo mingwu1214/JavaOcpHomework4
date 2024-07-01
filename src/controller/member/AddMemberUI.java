@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Toolkit;
 
 public class AddMemberUI extends JFrame {
 
@@ -49,9 +50,10 @@ public class AddMemberUI extends JFrame {
 	 * Create the frame.
 	 */
 	public AddMemberUI() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(AddMemberUI.class.getResource("/images/hermit-crab_64.png")));
 		setTitle("註冊新帳號");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 314);
+		setBounds(100, 100, 450, 380);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -60,7 +62,7 @@ public class AddMemberUI extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(128, 255, 255));
-		panel.setBounds(10, 10, 416, 256);
+		panel.setBounds(10, 10, 416, 333);
 		contentPane.add(panel);
         panel.setOpaque(false);  // Make the panel transparent
 		panel.setLayout(null);
@@ -73,7 +75,7 @@ public class AddMemberUI extends JFrame {
 		
 		name = new JTextField();
 		name.setFont(new Font("微軟正黑體", Font.PLAIN, 28));
-		name.setBounds(135, 18, 96, 21);
+		name.setBounds(134, 15, 250, 29);
 		panel.add(name);
 		name.setColumns(10);
 		
@@ -86,7 +88,7 @@ public class AddMemberUI extends JFrame {
 		username = new JTextField();
 		username.setFont(new Font("微軟正黑體", Font.PLAIN, 28));
 		username.setColumns(10);
-		username.setBounds(135, 57, 96, 21);
+		username.setBounds(135, 57, 249, 31);
 		panel.add(username);
 		
 		JLabel lblPassword = new JLabel("密碼");
@@ -100,7 +102,7 @@ public class AddMemberUI extends JFrame {
 		password = new JTextField();
 		password.setFont(new Font("微軟正黑體", Font.PLAIN, 28));
 		password.setColumns(10);
-		password.setBounds(135, 96, 96, 21);
+		password.setBounds(135, 96, 249, 31);
 		panel.add(password);
 		
 		JLabel lblAddress = new JLabel("地址");
@@ -108,13 +110,13 @@ public class AddMemberUI extends JFrame {
 		lblAddress.setForeground(new Color(255, 255, 255));
 		lblUsername.setForeground(new Color(255, 255, 255));
 		lblUsername.setFont(new Font("微軟正黑體", Font.BOLD, 28));
-		lblAddress.setBounds(10, 127, 114, 39);
+		lblAddress.setBounds(10, 131, 114, 39);
 		panel.add(lblAddress);
 		
 		address = new JTextField();
 		address.setFont(new Font("微軟正黑體", Font.PLAIN, 28));
 		address.setColumns(10);
-		address.setBounds(135, 135, 230, 21);
+		address.setBounds(134, 139, 250, 31);
 		panel.add(address);
 		
 		JLabel lblPhone = new JLabel("手機");
@@ -122,16 +124,18 @@ public class AddMemberUI extends JFrame {
 		lblPhone.setFont(new Font("微軟正黑體", Font.BOLD, 28));
 		lblUsername.setForeground(new Color(255, 255, 255));
 		lblUsername.setFont(new Font("微軟正黑體", Font.BOLD, 28));
-		lblPhone.setBounds(10, 159, 114, 39);
+		lblPhone.setBounds(10, 177, 114, 39);
 		panel.add(lblPhone);
 		
 		phone = new JTextField();
 		phone.setFont(new Font("微軟正黑體", Font.PLAIN, 28));
 		phone.setColumns(10);
-		phone.setBounds(135, 167, 96, 21);
+		phone.setBounds(134, 181, 250, 31);
 		panel.add(phone);
 		
 		JButton btnNewButton = new JButton("註冊新帳號");
+		btnNewButton.setIcon(new ImageIcon(AddMemberUI.class.getResource("/images/hermit-crab_64.png")));
+		btnNewButton.setFont(new Font("微軟正黑體", Font.BOLD, 28));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -163,11 +167,11 @@ public class AddMemberUI extends JFrame {
 				}				
 			}
 		});
-		btnNewButton.setBounds(289, 222, 96, 23);
+		btnNewButton.setBounds(102, 233, 282, 54);
 		panel.add(btnNewButton);
 		
 		JLabel backgroundLabel = new JLabel(new ImageIcon(LoginUI.class.getResource("/images/signup.png")));
-		backgroundLabel.setBounds(0, 0, 406, 256);
+		backgroundLabel.setBounds(0, 0, 406, 328);
 		panel.add(backgroundLabel);
 	}
 }
