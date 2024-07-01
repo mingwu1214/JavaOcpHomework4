@@ -102,9 +102,9 @@ public class HermitCrabHouseConfirmUI extends JFrame {
 		} else if(p.getL1N1()>0) {
 			houseType = "L1N2";
 		} else if(p.getL2N1()>0) {
-			houseType = "L2N1";
+			houseType = "L2N1 智能光芒黃";
 		} else if(p.getL2N1()>0) {
-			houseType = "L2N2";
+			houseType = "L2N2 未來探索粉";
 		} else if(p.getL3N1()>0) {
 			houseType = "L3N1 綠螺天然殼";
 		} else if(p.getL3N1()>0) {

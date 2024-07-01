@@ -65,7 +65,7 @@ public class LoginSuccessUI extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(LoginSuccessUI.class.getResource("/images/hermit-crab_64.png")));
 		setTitle("歡迎進入殼的世界");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 0, 467, 359);
+		setBounds(100, 0, 467, 638);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -73,10 +73,11 @@ public class LoginSuccessUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 11, 443, 300);
+		panel.setBounds(0, 11, 443, 579);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		// 進入訂殼
 		JButton btnNewButton = new JButton("進入訂殼");
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setIcon(null);
@@ -107,6 +108,39 @@ public class LoginSuccessUI extends JFrame {
         btnNewButton.setHorizontalTextPosition(SwingConstants.CENTER);		
 		btnNewButton.setBounds(20, 60, 401, 229);
 		panel.add(btnNewButton);
+		
+		// +++ 查詢編修
+		JButton btnNewButton2 = new JButton("查詢編修殼單");
+		btnNewButton2.setForeground(new Color(255, 255, 255));
+		btnNewButton2.setIcon(null);
+		btnNewButton2.setFont(new Font("新細明體", Font.PLAIN, 48));
+		btnNewButton2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//PorderUI l=new PorderUI();
+				HermitCrabHouseUI l= new HermitCrabHouseUI();
+				l.setVisible(true);
+				dispose();				
+			}
+		});
+		btnNewButton2.setPreferredSize(new Dimension(300, 300));
+
+        // Load the image icon
+        ImageIcon iconL3_2 = new ImageIcon(HermitCrabHouseUI.class.getResource("/images/enter01.png"));
+        
+        // Check if the image icon is loaded correctly
+        if (iconL3_2.getImageLoadStatus() == MediaTracker.COMPLETE) {
+            // Scale the image icon to fit the button size
+            Image img = iconL3_2.getImage();
+            Image scaledImg = img.getScaledInstance(btnNewButton2.getPreferredSize().width, btnNewButton2.getPreferredSize().height, Image.SCALE_SMOOTH);
+            btnNewButton2.setIcon(new ImageIcon(scaledImg));
+        } else {
+            System.out.println("Image not found or failed to load.");
+        }
+        btnNewButton2.setHorizontalTextPosition(SwingConstants.CENTER);		
+        btnNewButton2.setBounds(20, 330, 401, 229);
+		panel.add(btnNewButton2);		
+		// --- 查詢編修
 		
 		JLabel memberShow = new JLabel("");
 		memberShow.setFont(new Font("新細明體", Font.BOLD, 28));

@@ -28,7 +28,7 @@ import java.awt.print.PrinterException;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 
-public class HermitCrabHouseFinishUI extends JFrame {
+public class HermitCrabHouseQueryEditUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -40,7 +40,7 @@ public class HermitCrabHouseFinishUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					HermitCrabHouseFinishUI frame = new HermitCrabHouseFinishUI();
+					HermitCrabHouseQueryEditUI frame = new HermitCrabHouseQueryEditUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,8 +52,8 @@ public class HermitCrabHouseFinishUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public HermitCrabHouseFinishUI() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(HermitCrabHouseFinishUI.class.getResource("/images/hermit-crab_64.png")));
+	public HermitCrabHouseQueryEditUI() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(HermitCrabHouseQueryEditUI.class.getResource("/images/hermit-crab_64.png")));
 		setTitle("列印訂殼清單");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 724, 566);
@@ -106,7 +106,7 @@ public class HermitCrabHouseFinishUI extends JFrame {
 		output.setText(outputDetail);		
 		
 		JButton btnNewButton = new JButton("列印訂殼收據");
-		btnNewButton.setIcon(new ImageIcon(HermitCrabHouseFinishUI.class.getResource("/images/hermit-crab_64.png")));
+		btnNewButton.setIcon(new ImageIcon(HermitCrabHouseQueryEditUI.class.getResource("/images/hermit-crab_64.png")));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -131,7 +131,7 @@ public class HermitCrabHouseFinishUI extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_1.setIcon(new ImageIcon(HermitCrabHouseFinishUI.class.getResource("/images/hermit-crab_64.png")));
+		btnNewButton_1.setIcon(new ImageIcon(HermitCrabHouseQueryEditUI.class.getResource("/images/hermit-crab_64.png")));
 		btnNewButton_1.setFont(new Font("微軟正黑體", Font.BOLD, 28));
 		btnNewButton_1.setBounds(350, 440, 330, 78);
 		contentPane.add(btnNewButton_1);
