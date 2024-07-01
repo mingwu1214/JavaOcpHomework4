@@ -97,6 +97,14 @@ public class HermitCrabHouseUI extends JFrame {
 		
         // Create a JButton
 		JButton btnNewButtonL2 = new JButton("科技智享級");
+		btnNewButtonL2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				HermitCrabHouseL2UI l= new HermitCrabHouseL2UI();
+				l.setVisible(true);
+				dispose();	
+			}
+		});
 		btnNewButtonL2.setForeground(new Color(255, 255, 255));
 		btnNewButtonL2.setFont(new Font("微軟正黑體 Light", Font.BOLD, 48));
 		btnNewButtonL2.setBounds(40, 329, 720, 150);
@@ -120,6 +128,14 @@ public class HermitCrabHouseUI extends JFrame {
 
         // Create a JButton
 		JButton btnNewButtonL1 = new JButton("奢華尊貴級");
+		btnNewButtonL1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				HermitCrabHouseL1UI l= new HermitCrabHouseL1UI();
+				l.setVisible(true);
+				dispose();	
+			}
+		});
 		btnNewButtonL1.setForeground(new Color(255, 255, 255));
 		btnNewButtonL1.setFont(new Font("微軟正黑體 Light", Font.BOLD, 48));
 		btnNewButtonL1.setBounds(40, 529, 720, 150);

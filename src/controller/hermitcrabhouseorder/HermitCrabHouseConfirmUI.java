@@ -98,9 +98,9 @@ public class HermitCrabHouseConfirmUI extends JFrame {
 		String entryDate=p.getDate();
 		String entryTime=p.getTime();
 		if(p.getL1N1()>0) {
-			houseType = "L1N1";
+			houseType = "L1N1 穀倉木屋";
 		} else if(p.getL1N1()>0) {
-			houseType = "L1N2";
+			houseType = "L1N2 木弧吊窩";
 		} else if(p.getL2N1()>0) {
 			houseType = "L2N1 智能光芒黃";
 		} else if(p.getL2N1()>0) {
