@@ -12,21 +12,29 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
-
+import dao.impl.HermitCrabHouseOrderDaoImpl;
+import model.HermitCrabHouseOrder;
+import model.Member;
+import util.Date;
+import util.cal;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Calendar;
+
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
+import javax.swing.JTextField;
 
 public class HermitCrabHouseL3UI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JTextField date;
 
 	/**
 	 * Launch the application.
@@ -45,6 +53,7 @@ public class HermitCrabHouseL3UI extends JFrame {
 
 			        // Set the new location of the window
 			        frame.setLocation(x, y);
+
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -101,12 +110,42 @@ public class HermitCrabHouseL3UI extends JFrame {
 		contentPane.add(dd_1);
 		
 		JButton btnNewButton_1_1 = new JButton("確認");
-		btnNewButton_1_1.setBounds(502, 648, 138, 40);
+		btnNewButton_1_1.setBounds(491, 664, 138, 40);
 		btnNewButton_1_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Object o = cal.readFile("member.txt");
+				Member m = (Member) o;
+				String name = m.getName();
+				HermitCrabHouseOrder p=new HermitCrabHouseOrder();
 				if (dd_1.isSelected()) {
+					p.setName(name);
+					p.setL1N1(0);
+					p.setL1N2(0);
+					p.setL2N1(0);
+					p.setL2N2(0);			
+					p.setL3N1(1);
+					p.setL3N2(0);
+					p.setDate(date.getText());
+					p.setTime("12:00");
+					p.setDate2(date.getText());
+					p.setTime2("12:00");
+					new HermitCrabHouseOrderDaoImpl().add(p);
+					cal.saveFile("HermitCrabHouseOrder.txt", p);
 		        } else if (dd_2.isSelected()) {
+					p.setName(name);
+					p.setL1N1(0);
+					p.setL1N2(0);
+					p.setL2N1(0);
+					p.setL2N2(0);			
+					p.setL3N1(0);
+					p.setL3N2(1);
+					p.setDate(date.getText());
+					p.setTime("12:00");
+					p.setDate2(date.getText());
+					p.setTime2("12:00");
+					new HermitCrabHouseOrderDaoImpl().add(p);
+					cal.saveFile("HermitCrabHouseOrder.txt", p);
 		        }
 	            dispose();
 			
@@ -118,7 +157,7 @@ public class HermitCrabHouseL3UI extends JFrame {
 		contentPane.add(btnNewButton_1_1);
 		
 		JButton btnNewButton_1_1_1 = new JButton("返回寄居蟹度假豪華住宿選擇");
-		btnNewButton_1_1_1.setBounds(114, 648, 278, 40);
+		btnNewButton_1_1_1.setBounds(114, 664, 278, 40);
 		btnNewButton_1_1_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -163,10 +202,35 @@ public class HermitCrabHouseL3UI extends JFrame {
         txtrBc_1.setForeground(Color.GRAY);
         txtrBc_1.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
         contentPane.add(txtrBc_1);
+        
+        date = new JTextField();
+        date.setFont(new Font("Tahoma", Font.PLAIN, 28));
+		date.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Date date1=new Date(date);
+				date1.showDialog();
+			}
+		});
+        date.setBounds(301, 617, 154, 30);
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH) + 1; // months are 0-based
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        String formattedmonth = String.format("%02d", month);
+        String formattedday = String.format("%02d", day);
+
+        date.setText( "" + year + "-" + formattedmonth + "-" + formattedday);
+        contentPane.add(date);
+        date.setColumns(10);
+        
+        JLabel lblNewLabel_1 = new JLabel("選擇入殼日期");
+        lblNewLabel_1.setFont(new Font("微軟正黑體", Font.PLAIN, 28));
+        lblNewLabel_1.setBounds(114, 617, 178, 30);
+        contentPane.add(lblNewLabel_1);
 		
 		
 	}
-
 }
 
 
