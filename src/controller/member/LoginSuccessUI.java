@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import controller.hermitcrabhouseorder.HermitCrabHouseQueryEditUI;
 import controller.hermitcrabhouseorder.HermitCrabHouseUI;
 import model.Member;
 import util.cal;
@@ -118,7 +119,7 @@ public class LoginSuccessUI extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				//PorderUI l=new PorderUI();
-				HermitCrabHouseUI l= new HermitCrabHouseUI();
+				HermitCrabHouseQueryEditUI l= new HermitCrabHouseQueryEditUI();
 				l.setVisible(true);
 				dispose();				
 			}
