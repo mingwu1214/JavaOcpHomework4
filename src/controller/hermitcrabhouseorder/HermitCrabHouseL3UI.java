@@ -130,7 +130,7 @@ public class HermitCrabHouseL3UI extends JFrame {
 					p.setTime("12:00");
 					p.setDate2(date.getText());
 					p.setTime2("12:00");
-					new HermitCrabHouseOrderDaoImpl().add(p);
+					//new HermitCrabHouseOrderDaoImpl().add(p);
 					cal.saveFile("HermitCrabHouseOrder.txt", p);
 		        } else if (dd_2.isSelected()) {
 					p.setName(name);
@@ -144,9 +144,11 @@ public class HermitCrabHouseL3UI extends JFrame {
 					p.setTime("12:00");
 					p.setDate2(date.getText());
 					p.setTime2("12:00");
-					new HermitCrabHouseOrderDaoImpl().add(p);
+					//new HermitCrabHouseOrderDaoImpl().add(p);
 					cal.saveFile("HermitCrabHouseOrder.txt", p);
 		        }
+				HermitCrabHouseConfirmUI l= new HermitCrabHouseConfirmUI();
+				l.setVisible(true);
 	            dispose();
 			
 		}
