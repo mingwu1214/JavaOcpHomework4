@@ -125,4 +125,47 @@ public class HermitCrabHouseOrderDaoImpl implements HermitCrabHouseOrderDao {
 		return p;
 	}
 
+	@Override
+	public List<HermitCrabHouseOrder> selectByName(String name) {
+		/*
+		 * 1.先連線-->Connection
+		 * 2.sQL
+		 * 3.new ArrayList
+		 * 4.執行-->preparedstatement-->executeQuery
+		 * 5.ResultSet-->顯示-->List
+		 * 
+		 */
+		Connection conn=DbConnection.getDb();
+		String SQL="select * from hermitcrabhouseorder where name=?";
+		List<HermitCrabHouseOrder> l=new ArrayList();
+		
+		try {
+			PreparedStatement ps=conn.prepareStatement(SQL);
+			ps.setString(1, name);
+
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()) 
+			{
+				HermitCrabHouseOrder p = new HermitCrabHouseOrder();
+				p.setId(rs.getInt("id"));
+				p.setName(rs.getString("name"));
+				p.setL1N1(rs.getInt("L1N1"));
+				p.setL1N2(rs.getInt("L1N2"));
+				p.setL2N1(rs.getInt("L2N1"));
+				p.setL2N2(rs.getInt("L2N2"));
+				p.setL3N1(rs.getInt("L3N1"));
+				p.setL3N2(rs.getInt("L3N2"));	
+				p.setDate(rs.getString("date"));
+				p.setTime(rs.getString("time"));
+				p.setDate2(rs.getString("date2"));
+				p.setTime2(rs.getString("time2"));				
+				l.add(p);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return l;
+	}
+
 }

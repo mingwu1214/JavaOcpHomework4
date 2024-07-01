@@ -79,9 +79,9 @@ public class LoginSuccessUI extends JFrame {
 		
 		// 進入訂殼
 		JButton btnNewButton = new JButton("進入訂殼");
-		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setForeground(new Color(255, 0, 0));
 		btnNewButton.setIcon(null);
-		btnNewButton.setFont(new Font("新細明體", Font.PLAIN, 48));
+		btnNewButton.setFont(new Font("微軟正黑體", Font.PLAIN, 48));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -110,10 +110,10 @@ public class LoginSuccessUI extends JFrame {
 		panel.add(btnNewButton);
 		
 		// +++ 查詢編修
-		JButton btnNewButton2 = new JButton("查詢編修殼單");
+		JButton btnNewButton2 = new JButton("查詢殼單");
 		btnNewButton2.setForeground(new Color(255, 255, 255));
 		btnNewButton2.setIcon(null);
-		btnNewButton2.setFont(new Font("新細明體", Font.PLAIN, 48));
+		btnNewButton2.setFont(new Font("微軟正黑體", Font.PLAIN, 48));
 		btnNewButton2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

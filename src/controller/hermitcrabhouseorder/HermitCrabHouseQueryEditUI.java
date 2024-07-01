@@ -8,11 +8,9 @@ import javax.swing.border.EmptyBorder;
 
 import controller.member.LoginSuccessUI;
 import dao.impl.HermitCrabHouseOrderDaoImpl;
-import dao.impl.PorderDaoImpl;
 import dao.impl.ProductDaoImpl;
 import model.HermitCrabHouseOrder;
 import model.Member;
-import model.Porder;
 import model.Product;
 import util.cal;
 
@@ -73,35 +71,38 @@ public class HermitCrabHouseQueryEditUI extends JFrame {
 		panel.add(output);
 			
 		Member m=(Member)(cal.readFile("member.txt"));
-
-		List<HermitCrabHouseOrder> l = new HermitCrabHouseOrderDaoImpl().selectAll();
+		String memberName = m.getName();
+		//List<HermitCrabHouseOrder> l = new HermitCrabHouseOrderDaoImpl().selectAll();
+		List<HermitCrabHouseOrder> l = new HermitCrabHouseOrderDaoImpl().selectByName(memberName);
 		HermitCrabHouseOrder[] p=l.toArray(new HermitCrabHouseOrder[l.size()]);
 		int n=p.length -1;
-	
+		String outputDetail ="";
 		List<Product> ll = new ProductDaoImpl().selectAll();
 		Product[] product=ll.toArray(new Product[l.size()]);
 
-		String houseType="";
-		String entryDate=p[n].getDate();
-		String entryTime=p[n].getTime();
-		if(p[n].getL1N1()>0) {
-			houseType = "L1N1 穀倉木屋";
-		} else if(p[n].getL1N1()>0) {
-			houseType = "L1N2 木弧吊窩";
-		} else if(p[n].getL2N1()>0) {
-			houseType = "L2N1 智能光芒黃";
-		} else if(p[n].getL2N1()>0) {
-			houseType = "L2N2 未來探索粉";
-		} else if(p[n].getL3N1()>0) {
-			houseType = "L3N1 綠螺天然殼";
-		} else if(p[n].getL3N1()>0) {
-			houseType = "L3N2 貓眼螺";
-		} 
-		String outputDetail = "入住資訊:\n" +
-		"\n" + "名子:\t" + p[n].getName() + 
-		"\n" + "入住殼形:\t" + houseType + 
-		"\n" + "入殼日期:\t" + entryDate +
-		"\n" + "入殼時間:\t" + entryTime;
+		for(int i=0;i<n;i++) {
+			String houseType="";
+			String entryDate=p[i].getDate();
+			String entryTime=p[i].getTime();
+			if(p[i].getL1N1()>0) {
+				houseType = "L1N1 穀倉木屋";
+			} else if(p[i].getL1N1()>0) {
+				houseType = "L1N2 木弧吊窩";
+			} else if(p[i].getL2N1()>0) {
+				houseType = "L2N1 智能光芒黃";
+			} else if(p[i].getL2N1()>0) {
+				houseType = "L2N2 未來探索粉";
+			} else if(p[i].getL3N1()>0) {
+				houseType = "L3N1 綠螺天然殼";
+			} else if(p[i].getL3N1()>0) {
+				houseType = "L3N2 貓眼螺";
+			} 
+			outputDetail = outputDetail + "入住資訊:\n" +
+			"\n" + "名子:\t" + p[n].getName() + 
+			"\n" + "入住殼形:\t" + houseType + 
+			"\n" + "入殼日期:\t" + entryDate +
+			"\n" + "入殼時間:\t" + entryTime;
+		}
 
 		output.setText(outputDetail);		
 		

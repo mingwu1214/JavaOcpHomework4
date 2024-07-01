@@ -11,6 +11,8 @@ public interface HermitCrabHouseOrderDao {
 // read
 	List<HermitCrabHouseOrder> selectAll();
 	HermitCrabHouseOrder selectById(int id);
+	List<HermitCrabHouseOrder> selectByName(String name);
+
 // update
 	
 // delete
